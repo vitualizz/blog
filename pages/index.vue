@@ -4,9 +4,34 @@
       .hero-body
         .container
           Logo.logo
-          h1.title LeeDev
-          h2.subtitle vitualizz
+          Typeit(
+            ref='typeit'
+            :strings='intro.strings'
+            whiteText
+            loop
+          ).title
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      intro: {
+        strings: [
+          'Lee Palacios 🤓',
+          'Yo 💕 Tecnología',
+          'Autodidacta 😎',
+          'Blogger ✍ & Youtuber 👨💻',
+          'LeeDev & Vitualizz'
+        ]
+      }
+    }
+  },
+  mounted () {
+    this.$refs.typeit.goText()
+  }
+}
+</script>
 
 <style scoped lang='sass'>
 .intro
@@ -14,8 +39,8 @@
   background-repeat: no-repeat
   background-size: cover
   background-position: bottom
-  h1, h2
-    color: $white
+  .title
+    letter-spacing: 3px
   .logo
     min-width: 150px
     max-width: 250px
