@@ -1,3 +1,4 @@
+const webpack = require("webpack")
 
 export default {
   mode: 'spa',
@@ -82,6 +83,11 @@ export default {
         }
       }
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery"
+      })
+    ],
     /*
     ** You can extend webpack config here
     */
