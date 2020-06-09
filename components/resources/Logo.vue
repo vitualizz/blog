@@ -14,5 +14,5 @@ export default {
 
 <style scoped lang='sass'>
 img
-  border-radius: 100%
+  border-radius: 30%
 </style>
