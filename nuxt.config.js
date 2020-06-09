@@ -50,6 +50,10 @@ export default {
     '@nuxtjs/dotenv'
   ],
   /*
+  ** Components Global
+  */
+  components: true,
+  /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
