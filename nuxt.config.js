@@ -56,11 +56,14 @@ export default {
     '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // Proxy complement to Axios
     '@nuxtjs/proxy',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Style Resources
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    // FontAwesome
+    '@nuxtjs/fontawesome'
   ],
   /*
   ** Style Resources
@@ -87,6 +90,15 @@ export default {
       pathRewrite: {
         '^/youtube': '/',
       }
+    }
+  },
+  /*
+  ** Font Awesome
+  */
+  fontawesome: {
+    icons: {
+      solid: ['faEnvelope'],
+      brands: ['faFacebook', 'faInstagram', 'faMedium', 'faWhatsapp']
     }
   },
   /*
