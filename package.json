@@ -13,9 +13,10 @@
   },
   "dependencies": {
     "@nuxt/components": "^0.3.3",
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/proxy": "^2.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",

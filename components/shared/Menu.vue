@@ -37,18 +37,18 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-.navbar:not(.burguer)
-  background: transparent
+.navbar
   .navbar-item
-    color: $white
     font-weight: 400
     &:hover
       font-weight: bold
 
+.navbar:not(.burguer)
+  background: transparent
+  .navbar-item
+    color: $white
+
 .navbar.burguer
   .navbar-item
     color: $black
-    font-weight: 400
-    &:hover
-      font-weight: bold
 </style>

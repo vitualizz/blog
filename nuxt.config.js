@@ -18,6 +18,12 @@ export default {
     ]
   },
   /*
+  ** Environments
+  */
+  env: {
+    youtubeKey: process.env.YOUTUBE_KEY
+  },
+  /*
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
@@ -49,6 +55,7 @@ export default {
     '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Style Resources
@@ -71,6 +78,15 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
+  },
+  proxy: {
+    '/youtube': {
+      target: 'https://www.googleapis.com/youtube/v3',
+      pathRewrite: {
+        '^/youtube': '/',
+      }
+    }
   },
   /*
   ** Build configuration
