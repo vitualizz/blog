@@ -19,12 +19,21 @@
       .hero-body
         .container
           h1.title Videos
-          figure(
-            v-for='video in videos'
-          ).image
-            iframe(
-              :src="getUrlIframe(video)"
+          .has-text-centered
+            carousel(
+              :per-page-custom="[[320, 1], [1199, 2]]"
+              navigationEnabled
             )
+              slide(
+                v-for='(video, index) in listVideos'
+                :key='index'
+              )
+                figure.image
+                  iframe(
+                    :src="getUrlIframe(video)"
+                    width="640"
+                    height="360"
+                  ).has-ratio
 </template>
 
 <script>
@@ -39,21 +48,27 @@ export default {
           'Blogger ✍ & Youtuber 👨💻',
           'LeeDev & Vitualizz'
         ]
-      },
-      videos: []
+      }
     }
+  },
+  computed: {
+    listVideos () {
+      return this.$store.state.videos
+    }
+  },
+  created () {
+    this.getVideos()
   },
   mounted () {
     this.$refs.typeit.goText()
-    this.getVideos()
   },
   methods: {
     async getVideos () {
       await this
         .$axios
-        .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=5&order=relevance&key=' + process.env.YOUTUBE_KEY)
+        .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=4&order=relevance&key=' + process.env.YOUTUBE_KEY)
         .then((res) => {
-          this.videos = res.items
+          this.$store.commit('getVideos', res.items)
         })
     },
     getUrlIframe (video) {
