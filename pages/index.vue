@@ -19,7 +19,12 @@
       .hero-body
         .container
           h1.title Videos
-          p Bla bla blaaa
+          figure(
+            v-for='video in videos'
+          ).image
+            iframe(
+              :src="getUrlIframe(video)"
+            )
 </template>
 
 <script>
@@ -35,7 +40,7 @@ export default {
           'LeeDev & Vitualizz'
         ]
       },
-      videos: {}
+      videos: []
     }
   },
   mounted () {
@@ -44,8 +49,15 @@ export default {
   },
   methods: {
     async getVideos () {
-      console.log(process.env.YOUTUBE_KEY)
-      this.videos = await this.$axios.get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=5&order=relevance&key=' + process.env.YOUTUBE_KEY)
+      await this
+        .$axios
+        .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=5&order=relevance&key=' + process.env.YOUTUBE_KEY)
+        .then((res) => {
+          this.videos = res.items
+        })
+    },
+    getUrlIframe (video) {
+      return `https://www.youtube.com/embed/${video.id.videoId}`
     }
   }
 }
