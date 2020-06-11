@@ -34,18 +34,18 @@ export default {
       transparent: false
     }
   },
-  created () {
-    if (location.pathname === '/') {
-      this.isWhite = true
-      this.transparent = true
-    }
-  },
   computed: {
     colorItem () {
       return `text-${this.isWhite ? 'white' : 'black'}`
     },
     colorNavbar () {
       return (this.transparent ? 'is-transparent' : '')
+    }
+  },
+  created () {
+    if (location.pathname === '/') {
+      this.isWhite = true
+      this.transparent = true
     }
   },
   methods: {
