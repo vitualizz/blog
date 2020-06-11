@@ -12,7 +12,7 @@
           to='/'
         ).navbar-item Inicio
         nuxt-link(
-          to='/'
+          to='/posts'
         ).navbar-item Blog
         nuxt-link(
           to='/'
