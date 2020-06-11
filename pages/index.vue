@@ -10,6 +10,10 @@
             whiteText
             loop
           ).title
+          Socials(
+            size='3x'
+          )
+          Donation
     section.hero
       .hero-body
         .container
@@ -34,10 +38,6 @@
                     width="640"
                     height="360"
                   ).has-ratio
-    footer.footer
-      .content.has-text-centered
-        p Con amor
-          strong  Lee Palacios
 </template>
 
 <script>
@@ -94,7 +94,4 @@ export default {
     min-width: 150px
     max-width: 250px
     margin-bottom: 30px
-.footer
-  letter-spacing: 1px
-  font-size: 1.5rem
 </style>

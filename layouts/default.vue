@@ -2,4 +2,5 @@
   div
     Menu
     nuxt
+    Footer
 </template>
