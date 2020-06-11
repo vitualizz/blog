@@ -27,7 +27,7 @@ export default {
       brands: [
         { type: 'fab', name: 'facebook', url: 'https://facebook.com/lee.devel0p' },
         { type: 'fab', name: 'instagram', url: 'https://instagram.com/lee.develop' },
-        { type: 'fab', name: 'medium', url: 'https://medium.com/@vitualizz' },
+        { type: 'fab', name: 'youtube', url: 'https://www.youtube.com/channel/UCJZEIkTAh4uFr8DbShvZYww' },
         // { type: 'fa', name: 'whatsapp' },
         { type: 'fa', name: 'envelope', url: 'https://medium.com/@vitualizz' }
       ]

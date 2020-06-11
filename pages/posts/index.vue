@@ -1,3 +1,10 @@
 <template lang='pug'>
-  h1 Prueba pe
+  section.section
+    .container
+      Articles
 </template>
+
+<style scoped lang='sass'>
+.container
+  margin-top: 30px
+</style>

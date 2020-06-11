@@ -42,11 +42,13 @@ export default {
       return (this.transparent ? 'is-transparent' : '')
     }
   },
-  created () {
-    if (location.pathname === '/') {
-      this.isWhite = true
-      this.transparent = true
+  watch: {
+    $route (to, from) {
+      this.isWhite = this.transparent = (to.path === '/')
     }
+  },
+  created () {
+    this.isWhite = this.transparent = (location.pathname === '/')
   },
   methods: {
     activeNavbar () {

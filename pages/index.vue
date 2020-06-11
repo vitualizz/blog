@@ -18,14 +18,7 @@
       .hero-body
         .container
           h1.title Artículos
-          ul
-            li(
-              v-for='(article, index) in articles'
-              :key='index'
-            )
-              nuxt-link(
-                :to='getUrlPost(article.slug)'
-              ) {{ article.title }}
+          Articles
     section.hero
       .hero-body
         .container
@@ -50,12 +43,6 @@
 <script>
 export default {
   async fetch () {
-    this.articles = await this.$content('es')
-      .only(['title', 'description', 'slug'])
-      .limit(5)
-      .where({ publised: true })
-      .fetch()
-
     // await this
     //  .$axios
     //  .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=4&order=relevance&key=' + process.env.YOUTUBE_KEY)
@@ -73,8 +60,7 @@ export default {
           'Blogger ✍ & Youtuber 👨💻',
           'LeeDev & Vitualizz'
         ]
-      },
-      articles: []
+      }
     }
   },
   computed: {
@@ -88,9 +74,6 @@ export default {
   methods: {
     getUrlIframe (video) {
       return `https://www.youtube.com/embed/${video.id.videoId}`
-    },
-    getUrlPost (post) {
-      return `/posts/${post}`
     }
   }
 }

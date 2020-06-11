@@ -101,7 +101,7 @@ export default {
   fontawesome: {
     icons: {
       solid: ['faEnvelope'],
-      brands: ['faFacebook', 'faInstagram', 'faMedium', 'faWhatsapp']
+      brands: ['faFacebook', 'faInstagram', 'faYoutube', 'faWhatsapp']
     }
   },
   /*

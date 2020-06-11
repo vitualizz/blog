@@ -1,9 +1,10 @@
 ---
 title: Inter
 description: Learn how to us/content.
-publised: true
+published: true
+created_at: 12 de junio del 2020
 ---
 
-Pruebaa
+Pruebasaa
 
 Pruebaaaa
