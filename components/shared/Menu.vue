@@ -44,11 +44,11 @@ export default {
   },
   watch: {
     $route (to, from) {
-      this.isWhite = this.transparent = (to.path === '/')
+      this.changeColor(to.path)
     }
   },
   created () {
-    this.isWhite = this.transparent = (location.pathname === '/')
+    this.changeColor()
   },
   methods: {
     activeNavbar () {
@@ -58,12 +58,16 @@ export default {
     handleScroll (evt, el) {
       let white = false
       let transparent = false
-      if (location.pathname === '/') {
+      if (location.pathname === '/' && (window.innerWidth > window.innerHeight)) {
         const intro = $('.intro')[0].offsetHeight - $('.navbar')[0].offsetHeight
         white = transparent = (window.scrollY < intro)
       }
       this.isWhite = white
       this.transparent = transparent
+    },
+    changeColor (path = null) {
+      path = path || location.pathname
+      this.isWhite = this.transparent = ((path === '/') && (window.innerWidth > window.innerHeight))
     }
   }
 }
