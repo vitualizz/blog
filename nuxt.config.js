@@ -63,7 +63,9 @@ export default {
     // Style Resources
     '@nuxtjs/style-resources',
     // FontAwesome
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    // Content
+    '@nuxt/content'
   ],
   /*
   ** Style Resources
@@ -99,6 +101,19 @@ export default {
     icons: {
       solid: ['faEnvelope'],
       brands: ['faFacebook', 'faInstagram', 'faMedium', 'faWhatsapp']
+    }
+  },
+  /*
+  ** Nuxt Content
+  */
+  generate: {
+    async routes() {
+      const { $content } = require("@nuxt/content");
+      const files = await $content()
+        .only(["path"])
+        .fetch();
+
+      return files.map(file => (file.path === "/index" ? "/" : file.path));
     }
   },
   /*
