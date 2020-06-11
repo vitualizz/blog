@@ -18,7 +18,14 @@
       .hero-body
         .container
           h1.title Artículos
-          p Bla bla blaaa
+          ul
+            li(
+              v-for='(article, index) in articles'
+              :key='index'
+            )
+              nuxt-link(
+                :to='getUrlPost(article.slug)'
+              ) {{ article.title }}
     section.hero
       .hero-body
         .container
@@ -52,7 +59,8 @@ export default {
           'Blogger ✍ & Youtuber 👨💻',
           'LeeDev & Vitualizz'
         ]
-      }
+      },
+      articles: []
     }
   },
   computed: {
@@ -60,23 +68,29 @@ export default {
       return this.$store.state.videos
     }
   },
-  created () {
-    this.getVideos()
-  },
   mounted () {
     this.$refs.typeit.goText()
   },
+  async fetch () {
+    this.articles = await this.$content('es')
+      .only(['title', 'description', 'slug'])
+      .limit(5)
+      .where({ publised: true })
+      .fetch()
+
+    await this
+      .$axios
+      .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=4&order=relevance&key=' + process.env.YOUTUBE_KEY)
+      .then((res) => {
+        this.$store.commit('getVideos', res.items)
+      })
+  },
   methods: {
-    async getVideos () {
-      await this
-        .$axios
-        .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=4&order=relevance&key=' + process.env.YOUTUBE_KEY)
-        .then((res) => {
-          this.$store.commit('getVideos', res.items)
-        })
-    },
     getUrlIframe (video) {
       return `https://www.youtube.com/embed/${video.id.videoId}`
+    },
+    getUrlPost (post) {
+      return `/posts/${post}`
     }
   }
 }
