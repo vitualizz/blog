@@ -37,6 +37,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/scroll.js', mode: 'client' },
     '~/plugins/carousel.js'
   ],
   /*

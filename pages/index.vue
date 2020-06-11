@@ -56,12 +56,12 @@ export default {
       .where({ publised: true })
       .fetch()
 
-    await this
-      .$axios
-      .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=4&order=relevance&key=' + process.env.YOUTUBE_KEY)
-      .then((res) => {
-        this.$store.commit('getVideos', res.items)
-      })
+    // await this
+    //  .$axios
+    //  .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=4&order=relevance&key=' + process.env.YOUTUBE_KEY)
+    //  .then((res) => {
+    //    this.$store.commit('getVideos', res.items)
+    //  })
   },
   data () {
     return {
