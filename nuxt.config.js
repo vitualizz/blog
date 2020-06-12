@@ -47,7 +47,9 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc https://github.com/nuxt/components
-    '@nuxt/components'
+    '@nuxt/components',
+    // MomentJs
+    '@nuxtjs/moment'
   ],
   /*
   ** Nuxt.js modules
@@ -80,6 +82,12 @@ export default {
   ** Components Global
   */
   components: true,
+  /*
+  ** Moment
+  */
+  moment: {
+    locales: ['es']
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -130,7 +138,8 @@ export default {
     },
     plugins: [
       new webpack.ProvidePlugin({
-        $: "jquery"
+        $: "jquery",
+        _: "lodash"
       })
     ],
     /*

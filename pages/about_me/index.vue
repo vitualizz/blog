@@ -70,7 +70,7 @@
             | Bueno volviendo al tema, yo era muy bueno con la computadora
             | podia estar 24 horas en una (de ser posible) :v
             br
-            | Mi familiar "videmor", me éduco, me enseñó todo lo que sabia
+            | Mi tutor @videmor, me éduco, me enseñó todo lo que sabia
             | y actualmente lo sigue haciendo, como sabremos
             |
             strong Uno nunca deja de aprender.
@@ -80,13 +80,37 @@
             | lo que queria hacer, es otra cosa.
             br
             | Ahí tienen la línea de tiempo de mi vida :D
+    section.hero
+      .hero-body
+        .container.has-text-centered
+          Timeline(
+            :line='timeline'
+          )
 </template>
 
 <script>
 export default {
   data () {
     return {
-      imageMe: require('@/assets/images/resources/photo_me.png')
+      imageMe: require('@/assets/images/resources/photo_me.png'),
+      timeline: [
+        { date: '09-29-2002', content: 'Nació un pequeño programador' },
+        { date: '09-30-2002', content: 'Me dierón en adopción... ¡Es broma!' },
+        { date: '07-23-2009', head: 'Gamer', content: 'Instalé mi primer juego' },
+        { date: '10-07-2009', head: 'Youtube', content: 'Intenté volverme ser Youtuber' },
+        { date: '04-05-2012', head: 'Programador', content: 'Primera vez bucando como crear una pagina web' },
+        { date: '12-05-2012', content: 'Terminé mi primera pagina web' },
+        { date: '07-20-2013', content: 'Casi le dije que me gustaba a una chica :c' },
+        { date: '12-23-2013', content: 'Terminé la escuela' },
+        { date: '05-27-2017', content: 'Tuve mi primera enamorada' },
+        { date: '09-13-2017', head: 'Mi primer framework', content: 'Conocí Ruby on Rails' },
+        { date: '04-05-2018', head: 'Mi primer trabajo', content: 'Una empresa de tecnología me recibió como practicante' },
+        { date: '05-08-2018', head: 'Mi primer commit a PRD', content: 'Como olvidar mi primer commit' },
+        { date: '12-01-2019', content: 'Terminé el colegio' },
+        { date: '03-12-2019', head: 'Aprendí un poco más de la vida', content: 'Un año donde los golpes duros dejaron experiencias inolvidables' },
+        { date: '01-03-2020', content: 'Comienzan mis clases en la Cibertec' },
+        { date: '04-14-2020', content: 'Decido dejar la Cibertec y compro Platzi Expert' }
+      ]
     }
   }
 }
