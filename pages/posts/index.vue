@@ -1,12 +1,7 @@
 <template lang='pug'>
-  section.section
+  section.section.margin-menu
     .container
       Articles(
         filterTabs
       )
 </template>
-
-<style scoped lang='sass'>
-.container
-  margin-top: 30px
-</style>
