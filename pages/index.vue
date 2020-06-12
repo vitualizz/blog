@@ -13,7 +13,7 @@
           Socials(
             size='3x'
           )
-          Donation
+          //- Donation
     section.hero
       .hero-body
         .container
