@@ -27,7 +27,7 @@ export default {
         { name: 'Inicio', path: '/' },
         { name: 'Blog', path: '/posts' },
         // { name: 'Proyectos', path: '/' },
-        { name: 'Sobre mi', path: '/' },
+        { name: 'Sobre mi', path: '/about_me' },
         { name: 'Contáctame', path: '/' }
       ],
       isWhite: false,

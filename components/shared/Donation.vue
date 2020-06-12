@@ -7,7 +7,7 @@
 
 <style scoped lang='sass'>
 .donation
-  width: 20vw
+  width: fit-content
   margin: auto
   border: none
   background-color: #ffffffa1

@@ -26,60 +26,64 @@
             | mi travesia que me llevó por el camino de la tecnología.
           p
             | Todo comenzo en una ciudad de Perú, por la parte de la sierra
-            | en una ciudad llamada Cerro de Pasco
+            | en una ciudad llamada Cerro de Pasco.
           p
             | Cuando era pequeño, siempre me metieron a la cabeza que
             | tenia que ser bueno en todo, mi vida ya estaba planeada,
             | todo estaba friamente calculado.
             br
-            | Yo solo seguia y hacia caso a las personas mayores,
-            | como cualquier niño...
             | Pero poco a poco fui creciendo, me empezé a dar cuenta
             | de muchas cosas.
-            br
-            | Pero lo más importante fue que me di cuenta como
-            | el mundo se movia demasiado rápido.
-            | Aunque en mi ciudad no pasaban muchas cosas en avance
-            | tecnológico, yo sabia que algún dia todo iba a cambiar.
+            | El poder de mi curiosidad por saber que habia más allá de mi ciudad
+            | me llevó a investigar.
           p
-            | Toda mi primaria fue super recta y nunca me gusto romper las reglas,
-            | era un niño super antisocial y podria decirse que un poco falso,
-            | suena algo feo, pero es el siglo XXI,
-            | ¡los niños no son como todos pensamos!.
-            | Pero bueno eso será para un articulo que escribiré,
-            | mi secundaria es donde más cambié, desde
-            | personalidad hasta ideología, me di cuenta que mi vida
-            | no se iba a basar en una rectitud, sino la queria enfocar
-            | en romper barreras.
-          p
-            | Mi familia siempre fue cerrada de mente,
-            | hasta que un familiar pudo romper algunas y me enseño que si
-            | podia tener otro estilo de vida.
             br
-            | !No todo era como me lo dijeron¡.
-            br
-            | Me di cuenta que podia:
-            ol
-              li Trabajar con horas flexibles
-              li No siempre tenia que ir con terno a un trabajo
-              li No hacia falta ir a la Universidad para ser alguien en la vida
-            | Ese último punto es demasiado debatible
-            | depende de la carrera y de la opinión de cada uno.
-            | Pero pronto haré un articulo sobre esto también.
-          p
-            | Bueno volviendo al tema, yo era muy bueno con la computadora
-            | podia estar 24 horas en una (de ser posible) :v
-            br
-            | Mi tutor @videmor, me éduco, me enseñó todo lo que sabia
-            | y actualmente lo sigue haciendo, como sabremos
-            |
-            strong Uno nunca deja de aprender.
-            br
-            | Y así nació mi amor por la tecnología. No fue una historia
-            | tan impresionante, pero el como fue mi camino después de descubrir
-            | lo que queria hacer, es otra cosa.
-            br
-            | Ahí tienen la línea de tiempo de mi vida :D
+            | Al indagar demasiado, me enteré que
+            | el mundo estaba creciendo de manera acelerada.
+            | En ese momento no sabia lo que queria ser,
+            | pero si sabia que yo iba a romper la monotonía en la que vivía.
+          div(v-show='allText')
+            p
+              | Toda mi primaria fue super recta y nunca me gusto romper las reglas,
+              | era un niño super antisocial y podria decirse que un poco falso,
+              | suena algo feo, pero es el siglo XXI,
+              | ¡los niños no son como todos pensamos!.
+              | Pero bueno eso será para un articulo que escribiré,
+              | mi secundaria es donde más cambié, desde
+              | personalidad hasta ideología, me di cuenta que mi vida
+              | no se iba a basar en una rectitud, sino la queria enfocar
+              | en romper barreras.
+            p
+              | Mi familia siempre fue cerrada de mente,
+              | hasta que un familiar pudo romper algunas y me enseño que si
+              | podia tener otro estilo de vida.
+              br
+              | !No todo era como me lo dijeron¡.
+              br
+              | Me di cuenta que podia:
+              ol
+                li Trabajar con horas flexibles
+                li No siempre tenia que ir con terno a un trabajo
+                li No hacia falta ir a la Universidad para ser alguien en la vida
+              | Ese último punto es demasiado debatible
+              | depende de la carrera y de la opinión de cada uno.
+              | Pero pronto haré un articulo sobre esto también.
+            p
+              | Bueno volviendo al tema, yo era muy bueno con la computadora
+              | podia estar 24 horas en una. (de ser posible) :v
+              br
+              | Mi tutor @videmor, me éduco, me enseñó todo lo que sabia
+              | y actualmente lo sigue haciendo, como sabemos
+              |
+              strong Uno nunca deja de aprender.
+              br
+              | Y así nació mi amor por la tecnología. No fue una historia
+              | tan impresionante, pero el como fue mi camino después de descubrir
+              | lo que queria hacer, es otra cosa.
+              br
+              | Ahí tienen la línea de tiempo de mi vida :D
+        .has-text-centered
+          a(@click='allText = !allText') Mostrar {{ allText ? 'menos' : 'más' }}
     section.hero
       .hero-body
         .container.has-text-centered
@@ -93,6 +97,7 @@ export default {
   data () {
     return {
       imageMe: require('@/assets/images/resources/photo_me.png'),
+      allText: false,
       timeline: [
         { date: '09-29-2002', content: 'Nació un pequeño programador' },
         { date: '09-30-2002', content: 'Me dierón en adopción... ¡Es broma!' },
