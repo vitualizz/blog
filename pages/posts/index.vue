@@ -1,7 +1,9 @@
 <template lang='pug'>
   section.section
     .container
-      Articles
+      Articles(
+        filterTabs
+      )
 </template>
 
 <style scoped lang='sass'>

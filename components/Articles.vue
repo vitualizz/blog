@@ -1,32 +1,49 @@
 
 <template lang='pug'>
-  .columns
-    .column.is-4(
-      v-for='(article, index) in articles'
-      :key='index'
+  div
+    .tabs.is-centered(
+      v-if='filterTabs'
     )
-      nuxt-link(
-        :to='getUrlPost(article.slug)'
+      ul
+        li(
+          v-for='filter in filters'
+          :class='activeTab(filter.type)'
+        )
+          a(
+            @click='changeTab(filter.type)'
+            ) {{ filter.name }}
+    .columns
+      .column.is-4(
+        v-for='(article, index) in listArticles'
+        :key='index'
       )
-        .card
-          .card-image
-            figure.image.is-4by3
-              img(
-                :src='getImage(article.image)'
-              )
-          .card-content
-            .media
-              .media-content
-                p.title.is-4 {{ article.title }}
-            .content {{ article.description }}
-              br
-              time {{ article.created_at }}
+        nuxt-link(
+          :to='getUrlPost(article.slug)'
+        )
+          .card
+            .card-image
+              figure.image.is-4by3
+                img(
+                  :src='getImage(article.image)'
+                )
+            .card-content
+              .media
+                .media-content
+                  p.title.is-4 {{ article.title }}
+              .content {{ article.description }}
+                br
+                time {{ article.created_at }}
 </template>
 
 <script>
 import imageNotFound from '~/assets/images/resources/study.svg'
 export default {
   props: {
+    filterTabs: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     limit: {
       type: Number,
       required: false,
@@ -42,7 +59,22 @@ export default {
   },
   data () {
     return {
-      articles: []
+      articles: [],
+      categoryActive: 'all',
+      filters: [
+        { name: 'Todos', type: 'all' },
+        { name: 'Tecnología', type: 'technology' },
+        { name: 'Personal', type: 'personal' }
+      ]
+    }
+  },
+  computed: {
+    listArticles () {
+      let articles = this.articles
+      if (!(this.categoryActive === 'all')) {
+        articles = articles.filter(article => article.category === this.categoryActive)
+      }
+      return articles
     }
   },
   methods: {
@@ -51,6 +83,12 @@ export default {
     },
     getImage (image) {
       return (image && image.length ? image : imageNotFound)
+    },
+    activeTab (tab) {
+      return (this.categoryActive === tab ? 'is-active' : '')
+    },
+    changeTab (type) {
+      this.categoryActive = type
     }
   }
 }
