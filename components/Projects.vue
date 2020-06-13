@@ -21,7 +21,7 @@ export default {
     const gh = github.client()
     const user = await gh.user('vitualizz')
     user.repos((err, data, headers) => {
-      if (err) { console.log(err) }
+      if (err) { throw err }
       this.repositories = data
     })
   },
