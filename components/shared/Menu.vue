@@ -26,7 +26,7 @@ export default {
       routes: [
         { name: 'Inicio', path: '/' },
         { name: 'Blog', path: '/posts' },
-        // { name: 'Proyectos', path: '/' },
+        { name: 'Proyectos', path: '/projects' },
         { name: 'Sobre mi', path: '/about_me' }
         // { name: 'Contáctame', path: '/' }
       ],
