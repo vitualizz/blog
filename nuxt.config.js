@@ -18,12 +18,6 @@ export default {
     ]
   },
   /*
-  ** Environments
-  */
-  env: {
-    youtubeKey: process.env.YOUTUBE_KEY
-  },
-  /*
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
@@ -88,6 +82,13 @@ export default {
   moment: {
     locales: ['es']
   },
+  /*
+  ** ServerMiddleware
+  */
+  serverMiddleware: [
+    { path: '/videos', handler: '~/api/videos.js' },
+    { path: '/repositories', handler: '~/api/repositories.js' }
+  ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

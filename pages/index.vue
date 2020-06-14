@@ -42,14 +42,6 @@
 
 <script>
 export default {
-  async fetch () {
-    // await this
-    //  .$axios
-    //  .$get('/youtube/search?part=snippet&channelId=UCJZEIkTAh4uFr8DbShvZYww&maxResults=4&order=relevance&key=' + process.env.YOUTUBE_KEY)
-    //  .then((res) => {
-    //    this.$store.commit('getVideos', res.items)
-    //  })
-  },
   data () {
     return {
       intro: {
@@ -71,9 +63,18 @@ export default {
   mounted () {
     this.$refs.typeit.goText()
   },
+  created () {
+    this.getVideos()
+  },
   methods: {
     getUrlIframe (video) {
       return `https://www.youtube.com/embed/${video.id.videoId}`
+    },
+    async getVideos () {
+      await this.$axios.$get('videos')
+        .then((res) => {
+          this.$store.commit('getVideos', res)
+        })
     }
   }
 }

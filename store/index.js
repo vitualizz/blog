@@ -1,9 +1,13 @@
 export const state = () => ({
-  videos: []
+  videos: [],
+  repositories: []
 })
 
 export const mutations = {
   getVideos (state, data) {
     state.videos = data
+  },
+  getRepositories (state, data) {
+    state.repositories = data
   }
 }
