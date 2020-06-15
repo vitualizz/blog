@@ -1,10 +1,11 @@
 <template lang='pug'>
-  div
-    h1 {{ post.title }}
-    h3 {{ post.description }}
-    nuxt-content(
-      :document='post'
-    )
+  section.section.margin-menu
+    .container
+      h1.title {{ post.title }}
+      h3.subtitle {{ post.description }}
+      nuxt-content(
+        :document='post'
+      )
 </template>
 
 <script>
@@ -22,3 +23,10 @@ export default {
   }
 }
 </script>
+
+<style scoped lang='sass'>
+.container
+  &::v-deep p
+    font-weight: 400
+    font-size: 1.2rem
+</style>
