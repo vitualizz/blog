@@ -21,7 +21,8 @@ export default {
   props: {
     limit: {
       type: Number,
-      required: false
+      required: false,
+      default: undefined
     }
   },
   computed: {
