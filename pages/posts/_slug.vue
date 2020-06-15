@@ -27,7 +27,9 @@ export default {
   @for $i from 1 through 6
     &::v-deep h#{7 - $i}
       font-size: $i * 0.3em
+      margin-top: 20px
   &::v-deep p
-    font-weight: bold
+    font-weight: 400
     font-size: 1.2rem
+    margin: 20px 0
 </style>
