@@ -18,9 +18,15 @@
 
 <script>
 export default {
+  props: {
+    limit: {
+      type: Number,
+      required: false
+    }
+  },
   computed: {
     repositories () {
-      return this.$store.state.repositories
+      return this.$store.state.repositories.slice(0, this.limit)
     }
   }
 }

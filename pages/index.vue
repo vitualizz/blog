@@ -19,7 +19,7 @@
         .container
           h1.title Artículos
           Articles
-    section.hero
+    section.hero.videos
       .hero-body
         .container
           h1.title Videos
@@ -35,9 +35,12 @@
                 figure.image
                   iframe(
                     :src="getUrlIframe(video)"
-                    width="640"
-                    height="360"
                   ).has-ratio
+    section.hero
+      .hero-body
+        .container
+          h1.title Proyectos
+          Projects(limit='4')
 </template>
 
 <script>
@@ -83,4 +86,13 @@ export default {
     min-width: 150px
     max-width: 250px
     margin-bottom: 30px
+.videos
+  iframe
+    width: 640px
+    height: 360px
+@media (max-width: 500px)
+  .videos
+    iframe
+      width: 352px
+      height: 240px
 </style>
