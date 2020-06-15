@@ -24,7 +24,7 @@
             .card-image
               figure.image.is-4by3
                 img(
-                  :src='getImage(article.image)'
+                  :src='getImage(article.cover)'
                 )
             .card-content
               .media

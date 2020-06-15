@@ -1,8 +1,6 @@
 <template lang='pug'>
   section.section.margin-menu
     .container
-      h1.title {{ post.title }}
-      h3.subtitle {{ post.description }}
       nuxt-content(
         :document='post'
       )
@@ -25,8 +23,11 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-.container
+.nuxt-content
+  @for $i from 1 through 6
+    &::v-deep h#{7 - $i}
+      font-size: $i * 0.3em
   &::v-deep p
-    font-weight: 400
+    font-weight: bold
     font-size: 1.2rem
 </style>
