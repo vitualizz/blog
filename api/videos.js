@@ -11,7 +11,8 @@ router.get('/', (req, res, next) => {
       channelId: 'UCJZEIkTAh4uFr8DbShvZYww',
       maxResults: 4,
       order: 'relevance',
-      key: process.env.YOUTUBE_KEY
+      type: 'video',
+      key: process.env.YOUTUBE_TOKEN
     }
   }).pipe(res)
 })

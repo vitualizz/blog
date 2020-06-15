@@ -5,7 +5,7 @@
   "author": "vitualizz",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "YOUTUBE_TOKEN=$YOUTUBE_TOKEN GITHUB_TOKEN=$GITHUB_TOKEN nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",

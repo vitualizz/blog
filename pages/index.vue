@@ -63,18 +63,9 @@ export default {
   mounted () {
     this.$refs.typeit.goText()
   },
-  created () {
-    this.getVideos()
-  },
   methods: {
     getUrlIframe (video) {
       return `https://www.youtube.com/embed/${video.id.videoId}`
-    },
-    async getVideos () {
-      await this.$axios.$get('videos')
-        .then((res) => {
-          this.$store.commit('getVideos', res)
-        })
     }
   }
 }

@@ -3,7 +3,7 @@ var router = express()
 var request = require('request')
 var github = require('octonode')
 
-const gh = github.client(process.env.GITHUB_ACCESS_TOKEN)
+const gh = github.client(process.env.GITHUB_TOKEN)
 const user = gh.user('vitualizz')
 
 router.get('/', (req, res, next) => {

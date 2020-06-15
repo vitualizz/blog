@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .columns.is-multiline.is-mobile
+  .columns.is-multiline.is-mobile.is-vcentered
     .column.is-3-desktop.is-12-mobile.is-6-tablet.is-3-widescreen.is-3-fullhd(
       v-for='repo in repositories'
     )
