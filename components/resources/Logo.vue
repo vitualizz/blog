@@ -1,5 +1,5 @@
 <template lang='pug'>
-  img(:src='logo')
+  img(:src='logo' data-not-lazy)
 </template>
 
 <script>

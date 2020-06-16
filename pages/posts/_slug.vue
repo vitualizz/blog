@@ -86,6 +86,4 @@ export default {
           font-weight: 400
           text-align: right
           margin: 0
-    .isLoading
-      filter: blur(9px)
 </style>

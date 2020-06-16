@@ -63,7 +63,8 @@ export default {
     '@nuxt/content',
     // Lazy Load
     ['nuxt-lazy-load', {
-      defaultImage: '/images/default-lazy.png'
+      //defaultImage: '/images/default-lazy.png',
+      loadingClass: 'circle-loader-1'
     }]
   ],
   /*
@@ -103,8 +104,8 @@ export default {
   */
   fontawesome: {
     icons: {
-      solid: ['faEnvelope'],
-      brands: ['faFacebook', 'faInstagram', 'faYoutube', 'faWhatsapp', 'faGithub']
+      solid: ['faEnvelope', 'faShare'],
+      brands: ['faFacebook', 'faInstagram', 'faYoutube', 'faWhatsapp', 'faGithub', 'faTwitter']
     }
   },
   /*
