@@ -40,10 +40,31 @@ export default {
       font-size: $i * 0.3em
       margin-top: 20px
   &::v-deep
-    p
+    p, li
       font-weight: 400
+    p
       font-size: 1.2rem
       margin: 20px 0
+    li
+      font-size: 1.2rem
+    & > ul
+      list-style: inherit
+      li > ul
+        list-style: circle
+        li
+          list-style-position: inside
+    blockquote
+      background-color: #f5f5f5
+      border-left: 5px solid #dbdbdb
+      padding: 1.25em 2em
+      p
+        font-size: 1.5rem
+        font-weight: bold
+        &:last-child
+          font-size: 1.2rem
+          font-weight: 400
+          text-align: right
+          margin: 0
     .isLoading
       filter: blur(9px)
 </style>
