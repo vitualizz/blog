@@ -63,7 +63,7 @@ export default {
     '@nuxt/content',
     // Lazy Load
     ['nuxt-lazy-load', {
-      defaultImage: '/assets/images/resources/logo_letter.png'
+      defaultImage: '/images/default-lazy.png'
     }]
   ],
   /*
