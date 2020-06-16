@@ -1,7 +1,7 @@
 const webpack = require("webpack")
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -32,7 +32,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/scroll.js', mode: 'client' },
-    '~/plugins/carousel.js'
+    { src: '~/plugins/carousel.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules

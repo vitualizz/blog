@@ -28,7 +28,7 @@ export default {
         { color: '3B5990', type: 'facebook' },
         { color: '00ACEE', type: 'twitter' }
       ],
-      url: location.pathname
+      url: ''
     }
   },
   watch: {
@@ -36,12 +36,16 @@ export default {
       this.url = this.$route.fullPath
     }
   },
+  mounted () {
+    this.url = location.pathname
+  },
   methods: {
     colorButton (color) {
       return { backgroundColor: '#' + (color || '8b7dfb') }
     },
     getUrl (type) {
-      let url = encodeURIComponent(location.origin + this.url)
+      const base = process.client ? location.origin : 'sad'
+      let url = encodeURIComponent(base + this.url)
       switch (type) {
         case 'facebook':
           url = 'https://www.facebook.com/sharer/sharer.php?u=' + url

@@ -47,7 +47,7 @@ export default {
       this.changeColor(to.path)
     }
   },
-  created () {
+  mounted () {
     this.changeColor()
   },
   methods: {
@@ -66,7 +66,7 @@ export default {
       this.transparent = transparent
     },
     changeColor (path = null) {
-      path = path || location.pathname
+      path = path || window.location.pathname
       this.isWhite = this.transparent = ((path === '/') && (window.innerWidth > window.innerHeight))
     }
   }
