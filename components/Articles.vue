@@ -24,7 +24,7 @@
             .card-image
               figure.image.is-4by3
                 img(
-                  :src='getImage(article.cover)'
+                  :src='article.image'
                 )
             .card-content
               .media
@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import imageNotFound from '~/assets/images/resources/study.svg'
 export default {
   props: {
     filterTabs: {
@@ -52,7 +51,7 @@ export default {
   },
   async fetch () {
     this.articles = await this.$content('es')
-      .only(['title', 'description', 'slug', 'image', 'created_at'])
+      .only(['title', 'description', 'slug', 'image', 'created_at', 'category'])
       .limit(this.limit)
       .where({ published: true })
       .fetch()
@@ -80,9 +79,6 @@ export default {
   methods: {
     getUrlPost (post) {
       return `/posts/${post}`
-    },
-    getImage (image) {
-      return (image && image.length ? image : imageNotFound)
     },
     activeTab (tab) {
       return (this.categoryActive === tab ? 'is-active' : '')

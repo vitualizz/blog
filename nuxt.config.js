@@ -10,19 +10,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Aprendiendo junto a un Junior Developer.' },
-      // Open Graph
-      { property: 'og:type', content: 'website' },
-      { property: 'og:title', content: 'Lee Palacios' },
-      { property: 'og:description', content: 'Aprendiendo junto a un Junior Developer.' },
-      { property: 'og:image', content: (process.env.BASE_URL || 'http://lvh.me:5000') + '/images/logo_img.png' },
-      { property: 'og:url', content: (process.env.BASE_URL || 'http://lvh.me:5000') },
-      // Twitter Card
-      { property: 'twitter:title', content: 'Lee Palacios' },
-      { property: 'twitter:description', content: 'Aprendiendo junto a un Junior Developer.' },
-      { property: 'twitter:image', content: (process.env.BASE_URL || 'http://lvh.me:5000') + '/images/logo_img.png' },
-      { property: 'twitter:site', content: '@vitualizz' },
-      { property: 'twitter:creator', content: '@vitualizz' }
+      { hid: 'description', name: 'description', content: 'Aprendiendo junto a un Junior Developer.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
