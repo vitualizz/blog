@@ -27,7 +27,13 @@ export default {
       buttons: [
         { color: '3B5990', type: 'facebook' },
         { color: '00ACEE', type: 'twitter' }
-      ]
+      ],
+      url: location.pathname
+    }
+  },
+  watch: {
+    $route () {
+      this.url = this.$route.fullPath
     }
   },
   methods: {
@@ -35,7 +41,7 @@ export default {
       return { backgroundColor: '#' + (color || '8b7dfb') }
     },
     getUrl (type) {
-      let url = encodeURIComponent(location.href)
+      let url = encodeURIComponent(location.origin + this.url)
       switch (type) {
         case 'facebook':
           url = 'https://www.facebook.com/sharer/sharer.php?u=' + url
