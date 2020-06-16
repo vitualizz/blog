@@ -11,4 +11,4 @@ Toda persona en algún momento de su vida dice **"ODIO LOS LUNES"**, así que na
 Cuando te das cuenta que esperas ansiosamente los fines de semana, significa que estás haciendo algo mal.
 
 # ¡Fucking Deutorofobia!
-<img src="https://res.cloudinary.com/vitualizz/image/upload/v1592203870/Blog/Posts/Odias%20los%20Lunes/1_doanN_QDaYPlHziXEru7PA.jpg" alt="">
+<img-load src='https://res.cloudinary.com/vitualizz/image/upload/v1592203870/Blog/Posts/Odias%20los%20Lunes/1_doanN_QDaYPlHziXEru7PA.jpg'>

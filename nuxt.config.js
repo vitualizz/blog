@@ -53,8 +53,6 @@ export default {
     '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Proxy complement to Axios
-    '@nuxtjs/proxy',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Style Resources
@@ -62,7 +60,11 @@ export default {
     // FontAwesome
     '@nuxtjs/fontawesome',
     // Content
-    '@nuxt/content'
+    '@nuxt/content',
+    // Lazy Load
+    ['nuxt-lazy-load', {
+      defaultImage: '/assets/images/resources/logo_letter.png'
+    }]
   ],
   /*
   ** Style Resources
@@ -95,14 +97,6 @@ export default {
   */
   axios: {
     proxy: true
-  },
-  proxy: {
-    '/youtube': {
-      target: 'https://www.googleapis.com/youtube/v3',
-      pathRewrite: {
-        '^/youtube': '/',
-      }
-    }
   },
   /*
   ** Font Awesome
