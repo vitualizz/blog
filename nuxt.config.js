@@ -6,11 +6,23 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Lee Palacios',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: 'Aprendiendo junto a un Junior Developer.' },
+      // Open Graph
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Lee Palacios' },
+      { property: 'og:description', content: 'Aprendiendo junto a un Junior Developer.' },
+      { property: 'og:image', content: (process.env.BASE_URL || 'http://lvh.me:5000') + '/images/logo_img.png' },
+      { property: 'og:url', content: (process.env.BASE_URL || 'http://lvh.me:5000') },
+      // Twitter Card
+      { property: 'twitter:title', content: 'Lee Palacios' },
+      { property: 'twitter:description', content: 'Aprendiendo junto a un Junior Developer.' },
+      { property: 'twitter:image', content: (process.env.BASE_URL || 'http://lvh.me:5000') + '/images/logo_img.png' },
+      { property: 'twitter:site', content: '@vitualizz' },
+      { property: 'twitter:creator', content: '@vitualizz' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

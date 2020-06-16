@@ -40,7 +40,7 @@
       .hero-body
         .container
           h1.title Proyectos
-          Projects(limit='4')
+          Projects(:limit='4')
 </template>
 
 <script>

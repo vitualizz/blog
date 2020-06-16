@@ -8,6 +8,7 @@
 
 <script>
 import ImgLoad from '~/components/shared/ImgLoad.vue'
+import imageNotFound from '~/assets/images/resources/study.svg'
 
 export default {
   components: {
@@ -22,6 +23,26 @@ export default {
 
     return {
       post
+    }
+  },
+  head () {
+    return {
+      title: this.post.title + '- Lee Palacios',
+      meta: [
+        { hid: 'description', name: 'description', content: this.post.description },
+        // Open Graph
+        { property: 'og:type', content: 'article' },
+        { property: 'og:title', content: this.post.title + '- Lee Palacios' },
+        { property: 'og:description', content: this.post.description },
+        { property: 'og:image', content: this.post.image || location.origin + imageNotFound },
+        { property: 'og:url', content: location.href },
+        // Twitter Card
+        { property: 'twitter:title', content: this.post.title + '- Lee Palacios' },
+        { property: 'twitter:description', content: this.post.description },
+        { property: 'twitter:image', content: this.post.image || location.origin + imageNotFound },
+        { property: 'twitter:site', content: '@vitualizz' },
+        { property: 'twitter:creator', content: '@vitualizz' }
+      ]
     }
   }
 }
