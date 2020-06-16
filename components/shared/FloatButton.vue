@@ -10,12 +10,13 @@
       a.minifab(
         v-for='(btn, index) in buttons'
         :key='index'
-        :href='btn.url'
+        :href='getUrl(btn.type, btn.url)'
         :style='colorButton(btn.color)'
+        target='_blank'
       )
         i.minifabIcon
           font-awesome-icon(
-            :icon='[btn.icon.type, btn.icon.name]'
+            :icon="['fab', btn.type]"
           )
 </template>
 
@@ -24,14 +25,26 @@ export default {
   data () {
     return {
       buttons: [
-        { url: 'www.google.com', color: '3B5990', icon: { type: 'fab', name: 'facebook' } },
-        { url: 'www.google.com', color: '00ACEE', icon: { type: 'fab', name: 'twitter' } }
+        { color: '3B5990', type: 'facebook' },
+        { color: '00ACEE', type: 'twitter' }
       ]
     }
   },
   methods: {
     colorButton (color) {
       return { backgroundColor: '#' + (color || '8b7dfb') }
+    },
+    getUrl (type) {
+      let url = encodeURIComponent(location.href)
+      switch (type) {
+        case 'facebook':
+          url = 'https://www.facebook.com/sharer/sharer.php?u=' + url
+          break
+        case 'twitter':
+          url = 'https://twitter.com/intent/tweet?url=' + url
+          break
+      }
+      return url
     }
   }
 }
