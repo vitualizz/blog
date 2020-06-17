@@ -8,9 +8,17 @@
 
 <script>
 export default {
+  watch: {
+    $route () {
+      this.getLocation()
+    }
+  },
   created () {
     this.getRepositories()
     this.getVideos()
+  },
+  mounted () {
+    this.getLocation()
   },
   methods: {
     async getRepositories () {
@@ -24,6 +32,9 @@ export default {
         .then((res) => {
           this.$store.commit('getVideos', res.items)
         })
+    },
+    getLocation () {
+      this.$store.commit('getLocation', location.href)
     }
   }
 }

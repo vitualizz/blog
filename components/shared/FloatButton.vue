@@ -27,24 +27,15 @@ export default {
       buttons: [
         { color: '3B5990', type: 'facebook' },
         { color: '00ACEE', type: 'twitter' }
-      ],
-      url: null
+      ]
     }
-  },
-  watch: {
-    $route () {
-      this.url = this.$route.fullPath
-    }
-  },
-  mounted () {
-    this.url = location.href
   },
   methods: {
     colorButton (color) {
       return { backgroundColor: '#' + (color || '8b7dfb') }
     },
     getUrl (type) {
-      let url = encodeURIComponent(this.url)
+      let url = encodeURIComponent(this.$store.state.location.href)
       switch (type) {
         case 'facebook':
           url = 'https://www.facebook.com/sharer/sharer.php?u=' + url
