@@ -37,14 +37,14 @@ export default {
     }
   },
   mounted () {
-    this.url = location.pathname
+    this.url = location.href
   },
   methods: {
     colorButton (color) {
       return { backgroundColor: '#' + (color || '8b7dfb') }
     },
     getUrl (type) {
-      let url = encodeURIComponent(process.env.BASE_URL + this.url)
+      let url = encodeURIComponent(this.url)
       switch (type) {
         case 'facebook':
           url = 'https://www.facebook.com/sharer/sharer.php?u=' + url
