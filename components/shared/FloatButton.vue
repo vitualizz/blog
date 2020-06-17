@@ -28,7 +28,7 @@ export default {
         { color: '3B5990', type: 'facebook' },
         { color: '00ACEE', type: 'twitter' }
       ],
-      url: ''
+      url: null
     }
   },
   watch: {
@@ -44,8 +44,7 @@ export default {
       return { backgroundColor: '#' + (color || '8b7dfb') }
     },
     getUrl (type) {
-      const base = process.client ? location.origin : 'sad'
-      let url = encodeURIComponent(base + this.url)
+      let url = encodeURIComponent(process.env.BASE_URL + this.url)
       switch (type) {
         case 'facebook':
           url = 'https://www.facebook.com/sharer/sharer.php?u=' + url
