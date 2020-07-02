@@ -1,7 +1,6 @@
 <template lang='pug'>
   .navbar.is-fixed-top(
     v-scroll="handleScroll"
-    :class='colorNavbar'
   )
     .navbar-brand
       a.navbar-burger.burger(
@@ -27,7 +26,6 @@
           v-for='(route, index) in routes'
           :key='index'
           :to='route.path'
-          :class='colorItem'
         ).navbar-item {{ route.name }}
 </template>
 
@@ -42,26 +40,13 @@ export default {
         { name: 'Sobre mi', path: '/about_me' }
         // { name: 'Contáctame', path: '/' }
       ],
-      darkMode: false,
-      bgWhite: false,
-      transparent: false
-    }
-  },
-  computed: {
-    colorItem () {
-      return `text-${this.bgWhite ? 'white' : 'black'}`
-    },
-    colorNavbar () {
-      return this.transparent ? 'is-transparent' : ''
-    }
-  },
-  watch: {
-    $route (to, from) {
-      this.changeColor(to.path)
+      darkMode: false
     }
   },
   mounted () {
-    this.changeColor()
+    if (location.pathname === '/') {
+      $('.navbar').addClass('is-transparent')
+    }
   },
   methods: {
     changeColorMode () {
@@ -73,24 +58,10 @@ export default {
       $('.navbar-menu').toggleClass('is-active')
     },
     handleScroll (evt, el) {
-      let white = false
-      let transparent = false
-      if ($('.navbar-burger').is(':hidden') && location.pathname === '/' && window.innerWidth > window.innerHeight) {
-        const intro = $('.intro')[0].offsetHeight - $('.navbar')[0].offsetHeight
-        white = transparent = (window.scrollY < intro)
+      if (location.pathname === '/') {
+        const intro = $('.intro')[0].offsetHeight
+        $('.navbar').toggleClass('is-transparent', (window.scrollY < intro))
       }
-      this.bgWhite = white
-      this.transparent = transparent
-    },
-    changeColor (path = null) {
-      path = path || window.location.pathname
-      let white = false
-      let transparent = false
-      if ($('.navbar-burger').is(':hidden') && (path === '/')) {
-        white = transparent = true
-      }
-      this.bgWhite = white
-      this.transparent = transparent
     }
   }
 }
@@ -102,12 +73,20 @@ export default {
     width: 2rem
     display: flex
     align-items: center
-  .navbar-item
-    font-weight: 400
-    &:hover
-      font-weight: bold
+  .navbar-menu
+    .navbar-item
+      font-weight: 400
+      &:hover
+        font-weight: bold
+  &.is-transparent
+    a
+      color: $white
 
-.navbar.is-transparent:not(.burguer)
-  background: transparent
-
+// Media query equal to navbar-burguer
+@media screen and (max-width: 1023px)
+  .navbar
+    background: #fafafa
+    &.is-transparent
+      a
+        color: $black
 </style>

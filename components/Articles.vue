@@ -30,7 +30,8 @@
               .media
                 .media-content
                   p.title.is-4 {{ article.title }}
-              .content {{ article.description }}
+              .content
+                p {{ article.description }}
                 br
                 time {{ article.created_at }}
 </template>

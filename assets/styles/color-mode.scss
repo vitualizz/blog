@@ -1,26 +1,19 @@
-:root {
-  --color: #243746;
-  --color-primary: #158876;
-  --color-secondary: #0e2233;
-  --bg: #f2f2f2;
-  --bg-secondary: #fff;
-  --border-color: #ddd;
-}
-
 .dark-mode {
   --color: #ebf4f1;
-  --color-primary: #41b38a;
+  --color-primary: #fafafa;
   --color-secondary: #fdf9f3;
   --bg: #2c2c2c;
   --bg-secondary: #071521;
   --border-color: #0d2538;
+  --color-hover: #4e4e4e
 }
 .sepia-mode {
   --color: #433422;
   --color-secondary: #504231;
-  --bg: #f2f2f2;
+  --bg: #fafafa;
   --bg-secondary: #eae0c9;
   --border-color: #ded0bf;
+  --color-hover: #fafafa
 }
 
 body {
@@ -29,6 +22,14 @@ body {
   color: var(--color);
   transition: background-color .3s;
 }
-a {
-  color: var(--color-primary)
+a, p, h1, h2, h3, h4, h5, span, time, strong {
+  color: var(--color-primary) !important
+}
+
+.card, .navbar, .navbar-menu, footer {
+  background: var(--bg) !important
+}
+
+.navbar-item:hover, .navbar-item:focus {
+  background: var(--color-hover) !important
 }
