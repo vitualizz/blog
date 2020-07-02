@@ -47,6 +47,9 @@ export default {
     if (location.pathname === '/') {
       $('.navbar').addClass('is-transparent')
     }
+    if ($('html.dark-mode').length) {
+      this.darkMode = true
+    }
   },
   methods: {
     changeColorMode () {
