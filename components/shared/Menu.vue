@@ -56,16 +56,14 @@ export default {
       $('.navbar-menu').toggleClass('is-active')
     },
     handleScroll (evt, el) {
-      if (location.pathname === '/') {
-        let white = false
-        let transparent = false
-        if (window.innerWidth > window.innerHeight) {
-          const intro = $('.intro')[0].offsetHeight - $('.navbar')[0].offsetHeight
-          white = transparent = (window.scrollY < intro)
-        }
-        this.bgWhite = white
-        this.transparent = transparent
+      let white = false
+      let transparent = false
+      if ($('.navbar-burger').is(':hidden') && location.pathname === '/' && window.innerWidth > window.innerHeight) {
+        const intro = $('.intro')[0].offsetHeight - $('.navbar')[0].offsetHeight
+        white = transparent = (window.scrollY < intro)
       }
+      this.bgWhite = white
+      this.transparent = transparent
     },
     changeColor (path = null) {
       path = path || window.location.pathname

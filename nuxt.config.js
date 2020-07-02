@@ -25,6 +25,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/styles/color-mode.scss',
     '~/assets/styles/base.sass'
   ],
   /*
@@ -43,7 +44,9 @@ export default {
     // Doc https://github.com/nuxt/components
     '@nuxt/components',
     // MomentJs
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    // Dark Mode
+    '@nuxtjs/color-mode'
   ],
   /*
   ** Nuxt.js modules
