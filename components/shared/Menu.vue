@@ -30,16 +30,16 @@ export default {
         { name: 'Sobre mi', path: '/about_me' }
         // { name: 'Contáctame', path: '/' }
       ],
-      isWhite: false,
+      bgWhite: false,
       transparent: false
     }
   },
   computed: {
     colorItem () {
-      return `text-${this.isWhite ? 'white' : 'black'}`
+      return `text-${this.bgWhite ? 'white' : 'black'}`
     },
     colorNavbar () {
-      return (this.transparent ? 'is-transparent' : '')
+      return this.transparent ? 'is-transparent' : ''
     }
   },
   watch: {
@@ -56,18 +56,26 @@ export default {
       $('.navbar-menu').toggleClass('is-active')
     },
     handleScroll (evt, el) {
-      let white = false
-      let transparent = false
-      if (location.pathname === '/' && (window.innerWidth > window.innerHeight)) {
-        const intro = $('.intro')[0].offsetHeight - $('.navbar')[0].offsetHeight
-        white = transparent = (window.scrollY < intro)
+      if (location.pathname === '/') {
+        let white = false
+        let transparent = false
+        if (window.innerWidth > window.innerHeight) {
+          const intro = $('.intro')[0].offsetHeight - $('.navbar')[0].offsetHeight
+          white = transparent = (window.scrollY < intro)
+        }
+        this.bgWhite = white
+        this.transparent = transparent
       }
-      this.isWhite = white
-      this.transparent = transparent
     },
     changeColor (path = null) {
       path = path || window.location.pathname
-      this.isWhite = this.transparent = ((path === '/') && (window.innerWidth > window.innerHeight))
+      let white = false
+      let transparent = false
+      if ($('.navbar-burger').is(':hidden') && (path === '/')) {
+        white = transparent = true
+      }
+      this.bgWhite = white
+      this.transparent = transparent
     }
   }
 }

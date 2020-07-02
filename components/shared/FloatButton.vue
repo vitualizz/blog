@@ -1,5 +1,5 @@
 <template lang='pug'>
-  div
+  div.is-hidden-mobile
     .mainopShadow
     .fab
       .mainop
