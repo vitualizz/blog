@@ -107,7 +107,7 @@ export default {
   */
   fontawesome: {
     icons: {
-      solid: ['faEnvelope', 'faShare'],
+      solid: ['faEnvelope', 'faShare', 'faMoon', 'faSun'],
       brands: ['faFacebook', 'faInstagram', 'faYoutube', 'faWhatsapp', 'faGithub', 'faTwitter']
     }
   },

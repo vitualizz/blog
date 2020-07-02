@@ -9,9 +9,9 @@
         target='_blank'
         :class='colorItem'
       )
-       font-awesome-icon(
-        :icon="[brand.type, brand.name]"
-      )
+        font-awesome-icon(
+          :icon="[brand.type, brand.name]"
+        )
 </template>
 
 <script>

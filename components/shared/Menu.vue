@@ -3,12 +3,24 @@
     v-scroll="handleScroll"
     :class='colorNavbar'
   )
-    a.navbar-burger.burger(
-      @click='activeNavbar'
-    )
-      span(aria-hidden='true')
-      span(aria-hidden='true')
-      span(aria-hidden='true')
+    .navbar-brand
+      a.navbar-burger.burger(
+        @click='activeNavbar'
+      )
+        span(aria-hidden='true')
+        span(aria-hidden='true')
+        span(aria-hidden='true')
+      a.change-color-mode(
+        @click='changeColorMode'
+      )
+        font-awesome-icon(
+          v-if='darkMode'
+          :icon="['fas', 'moon']"
+        )
+        font-awesome-icon(
+          v-else
+          :icon="['fas', 'sun']"
+        )
     .navbar-menu
       .navbar-end
         nuxt-link(
@@ -30,6 +42,7 @@ export default {
         { name: 'Sobre mi', path: '/about_me' }
         // { name: 'Contáctame', path: '/' }
       ],
+      darkMode: false,
       bgWhite: false,
       transparent: false
     }
@@ -51,6 +64,10 @@ export default {
     this.changeColor()
   },
   methods: {
+    changeColorMode () {
+      this.darkMode = !this.darkMode
+      this.$nuxt.$colorMode.preference = (this.darkMode ? 'dark' : 'sepia')
+    },
     activeNavbar () {
       $('.navbar').toggleClass('burguer')
       $('.navbar-menu').toggleClass('is-active')
@@ -81,6 +98,10 @@ export default {
 
 <style scoped lang='sass'>
 .navbar
+  .change-color-mode
+    width: 2rem
+    display: flex
+    align-items: center
   .navbar-item
     font-weight: 400
     &:hover
