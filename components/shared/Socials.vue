@@ -7,6 +7,7 @@
       a(
         :href='brand.url'
         target='_blank'
+        :class='colorItem'
       )
        font-awesome-icon(
         :icon="[brand.type, brand.name]"
@@ -20,22 +21,23 @@ export default {
       type: String,
       required: false,
       default: '1x'
-    }
-  },
-  data () {
-    return {
-      brands: [
-        { type: 'fab', name: 'facebook', url: 'https://facebook.com/lee.devel0p' },
-        { type: 'fab', name: 'instagram', url: 'https://instagram.com/lee.devel0p' },
-        { type: 'fab', name: 'youtube', url: 'https://www.youtube.com/channel/UCJZEIkTAh4uFr8DbShvZYww' },
-        // { type: 'fa', name: 'whatsapp' },
-        { type: 'fab', name: 'github', url: 'https://github.com/vitualizz' }
-      ]
+    },
+    brands: {
+      type: Array,
+      required: true
+    },
+    color: {
+      type: String,
+      required: false,
+      default: 'white'
     }
   },
   computed: {
     addSize () {
       return `fa-${this.size}`
+    },
+    colorItem () {
+      return `text-${this.color}`
     }
   }
 }

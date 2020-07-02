@@ -1,8 +1,15 @@
 <template lang='pug'>
-  section.section.margin-menu
-    .container
-      nuxt-content(
-        :document='post'
+  div
+    section.section.margin-menu
+      .container
+        nuxt-content(
+          :document='post'
+        )
+    section.has-text-centered
+      Socials(
+        :brands='brands'
+        color='black'
+        size='5x'
       )
 </template>
 
@@ -23,6 +30,16 @@ export default {
 
     return {
       post
+    }
+  },
+  computed: {
+    brands () {
+      const url = encodeURIComponent(this.$store.state.location.href)
+      const brands = [
+        { type: 'fab', name: 'facebook', url: 'https://www.facebook.com/sharer/sharer.php?u=' + url },
+        { type: 'fab', name: 'twitter', url: 'https://twitter.com/intent/tweet?url=' + url }
+      ]
+      return brands
     }
   },
   head () {

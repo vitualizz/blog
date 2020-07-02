@@ -12,6 +12,7 @@
           ).title
           Socials(
             size='3x'
+            :brands='brands'
           )
           //- Donation
     section.hero
@@ -55,7 +56,14 @@ export default {
           'Blogger ✍ & Youtuber 👨💻',
           'LeeDev & Vitualizz'
         ]
-      }
+      },
+      brands: [
+        { type: 'fab', name: 'facebook', url: 'https://facebook.com/lee.devel0p' },
+        { type: 'fab', name: 'instagram', url: 'https://instagram.com/lee.devel0p' },
+        { type: 'fab', name: 'youtube', url: 'https://www.youtube.com/channel/UCJZEIkTAh4uFr8DbShvZYww' },
+        // { type: 'fa', name: 'whatsapp' },
+        { type: 'fab', name: 'github', url: 'https://github.com/vitualizz' }
+      ]
     }
   },
   computed: {
