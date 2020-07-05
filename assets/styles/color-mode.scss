@@ -40,7 +40,8 @@ footer {
 
 @media screen and (max-width: 1023px) {
   .navbar.is-transparent {
-    background: var(--bg) !important
+    background: var(--bg) !important;
+    color: #393e46 !important;
   }
   .navbar-menu {
     background: var(--bg)

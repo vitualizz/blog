@@ -63,7 +63,7 @@ export default {
     handleScroll (evt, el) {
       if (location.pathname === '/') {
         const intro = $('.intro')[0].offsetHeight
-        $('.navbar').toggleClass('is-transparent', (window.scrollY < intro))
+        $('.navbar').toggleClass('is-transparent white-important', (window.scrollY < intro))
       }
     }
   }
@@ -71,6 +71,8 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.white-important
+  color: $white
 .navbar
   .change-color-mode
     width: 2rem
