@@ -81,15 +81,12 @@ export default {
       font-weight: 400
       &:hover
         font-weight: bold
-  &.is-transparent
-    a
-      color: $white
+  a
+    color: $white
 
 // Media query equal to navbar-burguer
 @media screen and (max-width: 1023px)
   .navbar
-    background: #fafafa
-    &.is-transparent
-      a
-        color: $black
+    a
+      color: $black
 </style>

@@ -16,6 +16,9 @@ export default {
   created () {
     this.getRepositories()
     this.getVideos()
+    if (this.$nuxt.$colorMode.preference === 'system') {
+      this.$nuxt.$colorMode.preference = 'sepia'
+    }
   },
   mounted () {
     this.getLocation()

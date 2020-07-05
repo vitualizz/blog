@@ -26,10 +26,23 @@ a, p, h1, h2, h3, h4, h5, span, time, strong {
   color: var(--color-primary) !important
 }
 
-.card, .navbar, .navbar-menu, footer {
+.card, .navbar {
+  background: var(--bg)
+}
+
+footer {
   background: var(--bg) !important
 }
 
 .navbar-item:hover, .navbar-item:focus {
   background: var(--color-hover) !important
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar.is-transparent {
+    background: var(--bg) !important
+  }
+  .navbar-menu {
+    background: var(--bg)
+  }
 }
