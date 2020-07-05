@@ -2,6 +2,13 @@
   .navbar.is-fixed-top(
     v-scroll="handleScroll"
   )
+    .navbar-menu
+      .navbar-end
+        nuxt-link(
+          v-for='(route, index) in routes'
+          :key='index'
+          :to='route.path'
+        ).navbar-item {{ route.name }}
     .navbar-brand
       a.navbar-burger.burger(
         @click='activeNavbar'
@@ -20,13 +27,6 @@
           v-else
           :icon="['fas', 'sun']"
         )
-    .navbar-menu
-      .navbar-end
-        nuxt-link(
-          v-for='(route, index) in routes'
-          :key='index'
-          :to='route.path'
-        ).navbar-item {{ route.name }}
 </template>
 
 <script>
