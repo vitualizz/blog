@@ -43,9 +43,18 @@ export default {
       darkMode: false
     }
   },
+  watch: {
+    $route () {
+      if (this.$route.path === '/') {
+        $('.navbar').addClass('is-transparent white-important')
+      } else {
+        $('.navbar').removeClass('is-transparent white-important')
+      }
+    }
+  },
   mounted () {
     if (location.pathname === '/') {
-      $('.navbar').addClass('is-transparent')
+      $('.navbar').addClass('is-transparent white-important')
     }
     if ($('html.dark-mode').length) {
       this.darkMode = true
