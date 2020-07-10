@@ -14,13 +14,15 @@ export default {
     }
   },
   created () {
-    this.getRepositories()
-    this.getVideos()
     if (this.$nuxt.$colorMode.preference === 'system') {
       this.$nuxt.$colorMode.preference = 'sepia'
     }
   },
   mounted () {
+    if (process.env.NODE_ENV === 'production') {
+      this.getRepositories()
+      this.getVideos()
+    }
     this.getLocation()
   },
   methods: {

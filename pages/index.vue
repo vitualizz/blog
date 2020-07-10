@@ -14,7 +14,6 @@
             size='3x'
             :brands='brands'
           )
-          //- Donation
     section.hero
       .hero-body
         .container
