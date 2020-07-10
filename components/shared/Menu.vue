@@ -98,6 +98,10 @@ export default {
 // Media query equal to navbar-burguer
 @media screen and (max-width: 1023px)
   .navbar
+    display: flex
+    flex-wrap: wrap-reverse
+    .navbar-menu, .navbar-brand
+      width: 100%
     a
       color: $black
 </style>
