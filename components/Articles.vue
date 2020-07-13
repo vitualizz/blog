@@ -63,7 +63,7 @@ export default {
       categoryActive: 'all',
       filters: [
         { name: 'Todos', type: 'all' },
-        { name: 'Tecnología', type: 'technology' },
+        { name: 'Programación', type: 'development' },
         { name: 'Personal', type: 'personal' }
       ]
     }

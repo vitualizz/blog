@@ -68,15 +68,11 @@ export default {
 .nuxt-content
   width: 60%
   margin: auto
-  @media (max-width: 500px)
-    width: 100%
-  @media (max-width: 921px)
-    width: 75%
-  @for $i from 1 through 6
-    &::v-deep h#{7 - $i}
-      font-size: $i * 0.3em
-      margin-top: 20px
   &::v-deep
+    pre
+      white-space: pre-wrap
+    figure
+      padding-top: 100%
     p, li
       font-weight: 400
     p
@@ -102,4 +98,27 @@ export default {
           font-weight: 400
           text-align: right
           margin: 0
+  @for $i from 1 through 6
+    &::v-deep h#{7 - $i}
+      font-size: $i * 0.3em
+      margin-top: 20px
+  @media (min-width: 1408px)
+    width: 75%
+    .cover
+      width: 70%
+      margin: auto
+    &::v-deep
+      p
+        font-size: 1.5rem
+    @for $i from 1 through 6
+      &::v-deep h#{7 - $i}
+        font-size: $i * 0.5em
+        margin-top: 20px
+  @media (max-width: 500px)
+    width: 100%
+  @media (max-width: 921px)
+    width: 75%
+@media screen and (min-width: 1408px)
+  .container
+    max-width: 100%
 </style>
