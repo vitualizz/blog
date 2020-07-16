@@ -31,11 +31,13 @@
     "nuxt": "^2.0.0",
     "nuxt-lazy-load": "^1.2.4",
     "octonode": "^0.9.5",
+    "prism-themes": "^1.4.0",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^8.0.2",
     "typeit": "^7.0.4",
-    "vue-carousel": "^0.18.0"
+    "vue-carousel": "^0.18.0",
+    "vue-code-highlight": "^0.7.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

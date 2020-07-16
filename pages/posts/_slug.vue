@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import 'vue-code-highlight/themes/duotone-sea.css'
+import 'vue-code-highlight/themes/window.css'
 import ImgLoad from '~/components/shared/ImgLoad.vue'
 import imageNotFound from '~/assets/images/resources/study.svg'
 
@@ -69,8 +71,6 @@ export default {
   width: 60%
   margin: auto
   &::v-deep
-    pre
-      white-space: pre-wrap
     figure
       padding-top: 100%
     p, li

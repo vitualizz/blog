@@ -96,6 +96,16 @@ export default {
     { path: '/repositories', handler: '~/api/repositories.js' }
   ],
   /*
+  ** Content
+  */
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
+      }
+    }
+  },
+  /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
