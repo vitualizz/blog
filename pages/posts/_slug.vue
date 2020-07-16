@@ -71,6 +71,9 @@ export default {
   width: 60%
   margin: auto
   &::v-deep
+    pre
+      .number
+        all: unset
     figure
       padding-top: 100%
     p, li
