@@ -117,7 +117,7 @@ y de los gustos. 💎
 
 ## ¡DevOps es importante!
 Esta metodología implica aprender nuevos conceptos
-y a utilizar diferentes heramientas. Con el tiempo
+y a utilizar diferentes herramientas. Con el tiempo
 iremos aprendiendo pero es bueno tenerlo en cuenta.
 Una de las cosas por la que te recomiendo comenzar es **GIT** y **DOCKER**. 😎
 
