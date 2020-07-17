@@ -2,7 +2,8 @@
   div
     Menu
     nuxt
-    FloatButton
+    no-ssr
+      FloatButton
     Footer
 </template>
 
@@ -23,7 +24,6 @@ export default {
       this.getRepositories()
       this.getVideos()
     }
-    this.getLocation()
   },
   methods: {
     async getRepositories () {
@@ -37,9 +37,6 @@ export default {
         .then((res) => {
           this.$store.commit('getVideos', res.items)
         })
-    },
-    getLocation () {
-      this.$store.commit('getLocation', location.href)
     }
   }
 }

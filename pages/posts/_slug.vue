@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     brands () {
-      const url = encodeURIComponent(this.$store.state.location.href)
+      const url = encodeURIComponent(location.href)
       const brands = [
         { type: 'fab', name: 'facebook', url: 'https://www.facebook.com/sharer/sharer.php?u=' + url },
         { type: 'fab', name: 'twitter', url: 'https://twitter.com/intent/tweet?url=' + url }
@@ -51,12 +51,12 @@ export default {
         { property: 'og:type', content: 'article' },
         { property: 'og:title', content: this.post.title + ' - Lee Palacios' },
         { property: 'og:description', content: this.post.description },
-        { property: 'og:image', content: this.post.image || this.$store.state.location.origin + imageNotFound },
-        { property: 'og:url', content: this.$store.state.location.href },
+        { property: 'og:image', content: this.post.image || process.env.BASE_URL + imageNotFound },
+        { property: 'og:url', content: process.env.BASE_URL },
         // Twitter Card
         { property: 'twitter:title', content: this.post.title + ' - Lee Palacios' },
         { property: 'twitter:description', content: this.post.description },
-        { property: 'twitter:image', content: this.post.image || this.$store.state.location.origin + imageNotFound },
+        { property: 'twitter:image', content: this.post.image || process.env.BASE_URL + imageNotFound },
         { property: 'twitter:site', content: '@vitualizz' },
         { property: 'twitter:creator', content: '@vitualizz' }
       ]

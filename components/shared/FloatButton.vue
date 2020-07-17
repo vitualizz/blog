@@ -35,7 +35,7 @@ export default {
       return { backgroundColor: '#' + (color || '8b7dfb') }
     },
     getUrl (type) {
-      let url = encodeURIComponent(this.$store.state.location.href)
+      let url = encodeURIComponent(location.href)
       switch (type) {
         case 'facebook':
           url = 'https://www.facebook.com/sharer/sharer.php?u=' + url
