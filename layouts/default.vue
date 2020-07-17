@@ -9,11 +9,6 @@
 
 <script>
 export default {
-  watch: {
-    $route () {
-      this.getLocation()
-    }
-  },
   created () {
     if (this.$nuxt.$colorMode.preference === 'system') {
       this.$nuxt.$colorMode.preference = 'sepia'

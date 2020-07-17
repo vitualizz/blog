@@ -6,11 +6,12 @@
           :document='post'
         )
     section.has-text-centered
-      Socials(
-        :brands='brands'
-        color='black'
-        size='5x'
-      )
+      no-ssr
+        Socials(
+          :brands='shared'
+          color='black'
+          size='5x'
+        )
 </template>
 
 <script>
@@ -33,15 +34,17 @@ export default {
       post
     }
   },
-  computed: {
-    brands () {
-      const url = encodeURIComponent(location.href)
-      const brands = [
-        { type: 'fab', name: 'facebook', url: 'https://www.facebook.com/sharer/sharer.php?u=' + url },
-        { type: 'fab', name: 'twitter', url: 'https://twitter.com/intent/tweet?url=' + url }
-      ]
-      return brands
+  data () {
+    return {
+      shared: []
     }
+  },
+  mounted () {
+    const url = encodeURIComponent(location.href)
+    this.shared = [
+      { type: 'fab', name: 'facebook', url: 'https://www.facebook.com/sharer/sharer.php?u=' + url },
+      { type: 'fab', name: 'twitter', url: 'https://twitter.com/intent/tweet?url=' + url }
+    ]
   },
   head () {
     return {

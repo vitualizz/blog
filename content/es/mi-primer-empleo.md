@@ -1,7 +1,7 @@
 ---
 title: Mi Primer Empleo
 description: Conseguí mi primer empleo a los 15 años, te contaré las experiencias y conocimientos que obtuve al trabajar ahí como Junior Developer
-published: false
+published: true
 category: development
 image: https://res.cloudinary.com/vitualizz/image/upload/v1594451143/Blog/Posts/Mi%20primer%20empleo/Cover.png
 created_at: 10 de julio del 2020
@@ -11,13 +11,14 @@ updated_at: 10 de julio del 2020
 
 <div class="columns is-multiline">
 <div class="column is-full is-half-desktop">
-
+<p class='is-size-4 is-size-2-desktop'>
 Conseguí mi primer empleo a los 15 años, como Junior Developer (back-end).
 Una muy grande experiencia, hizo que me dé cuenta que
 no solo es escribir código y que funcione. Hay todo un trasfondo.
 Aquí compartiré algunas experiencias y conocimientos contigo,
 de todo lo que me hubiera gustado saber antes de entrar a trabajar.
 Uno nunca para de aprender 🤓
+</p>
 </div>
 <div class="column is-full is-half-desktop">
 
@@ -119,3 +120,8 @@ Esta metodología implica aprender nuevos conceptos
 y a utilizar diferentes heramientas. Con el tiempo
 iremos aprendiendo pero es bueno tenerlo en cuenta.
 Una de las cosas por la que te recomiendo comenzar es **GIT** y **DOCKER**. 😎
+
+<br></br>
+
+### GRACIAS POR LEER, SI TE GUSTÓ Y CREES QUE LE PUEDE SERVIR A ALGUIEN, ¡COMPÁRTELO!
+#### by LEE ❤️
