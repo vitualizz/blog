@@ -14,9 +14,8 @@
 </template>
 
 <script>
-import 'vue-code-highlight/themes/duotone-sea.css'
 import 'vue-code-highlight/themes/window.css'
-import ImgLoad from '~/components/shared/ImgLoad.vue'
+import ImgLoad from '~/components/elements/ImgLoad.vue'
 import imageNotFound from '~/assets/images/resources/study.svg'
 
 export default {
@@ -72,6 +71,11 @@ export default {
   margin: auto
   &::v-deep
     pre
+      width: 100%
+      code
+        span
+          font-size: 1.5em
+          font-weight: 400
       .number
         all: unset
     figure
@@ -108,7 +112,7 @@ export default {
   @media (min-width: 1408px)
     width: 75%
     .cover
-      width: 70%
+      width: 50%
       margin: auto
     &::v-deep
       p
