@@ -46,7 +46,9 @@ export default {
     // MomentJs
     '@nuxtjs/moment',
     // Dark Mode
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    // Google Analytics
+    '@nuxtjs/google-analytics'
   ],
   /*
   ** Nuxt.js modules
@@ -78,6 +80,19 @@ export default {
       '~/assets/styles/global/*.sass'
     ]
   },
+  /*
+  ** Google Analytics
+  */
+  googleAnalytics: {
+    id: process.env.ANALYTICS_ID
+  },
+  /* publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID
+    }
+  },
+  */
+
   /*
   ** Components Global
   */
