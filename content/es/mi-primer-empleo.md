@@ -1,5 +1,5 @@
 ---
-title: Mi Primer Empleo
+title: Lo que aprendí en mi Primer Empleo
 description: Conseguí mi primer empleo a los 15 años, te contaré las experiencias y conocimientos que obtuve al trabajar ahí como Junior Developer
 published: true
 category: development
@@ -7,7 +7,7 @@ image: https://res.cloudinary.com/vitualizz/image/upload/v1594451143/Blog/Posts/
 created_at: 10 de julio del 2020
 updated_at: 10 de julio del 2020
 ---
-# Mi primer empleo
+# Cosas que aprendi en mi primer empleo
 
 <div class="columns is-multiline">
 <div class="column is-full is-half-desktop">
@@ -106,6 +106,19 @@ end
 </div>
 </div>
 
+## ¡DevOps es importante!
+Esta metodología implica aprender nuevos conceptos
+y a utilizar diferentes herramientas. Con el tiempo
+iremos aprendiendo pero es bueno tenerlo en cuenta.
+Una de las cosas por la que te recomiendo comenzar es **GIT** y **DOCKER**. 😎
+
+## La arquitectura es demasiado importante
+Normalmente para trabajos personales o que no tengan gran escala,
+puedes usar cualquier tipo de Arquitectura (Aunque siempre es bueno
+tener en consideración tener una buena arquitectura, por si alguna vez
+queremos crecer, además es bueno acostumbrarse en estás practicas).  
+Tener un sistema escalable es lo mejor, por si uno se empieza a expandir. 🤓
+
 ## Ningún lenguaje es mejor que otro
 Esté es un tema muy debatido, cada programador
 tiene un romance con un lenguaje
@@ -115,13 +128,17 @@ tienen sus pros y contras.
 Recuerda que los lenguajes se utilizan dependiendo del contexto
 y de los gustos. 💎
 
-## ¡DevOps es importante!
-Esta metodología implica aprender nuevos conceptos
-y a utilizar diferentes herramientas. Con el tiempo
-iremos aprendiendo pero es bueno tenerlo en cuenta.
-Una de las cosas por la que te recomiendo comenzar es **GIT** y **DOCKER**. 😎
+## ¡Conocer del negocio es muy importante!
+Este es un punto que normalmente no lo tomamos en cuenta,
+pero es uno de los más importantes a tomar en cuenta.  
+Recordar que no solo es escribir código, sino también es
+pensar porqué lo estás haciendo.  
+Siempre preguntarte:  
+¿En que ayuda? ¿Cómo puedes apoyar?
+Tener esa mentalidad hace que dejes de escribir solo código,
+sino ya empiezas a programar enserio. 💻
+
 
 <br></br>
 
 ### GRACIAS POR LEER, SI TE GUSTÓ Y CREES QUE LE PUEDE SERVIR A ALGUIEN, ¡COMPÁRTELO!
-#### by LEE ❤️
